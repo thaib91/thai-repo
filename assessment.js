@@ -1,68 +1,143 @@
-// #1 create a variable called 'myName' and assign it to your name as a string
+/**
+ * #1
+ *
+ * Create an object called 'me' that has three keys, 'firstname', 'age', and 'state'.
+ * Assign the keys the appropriate values.
+ */
 
-const myName = 'Thai Bui ';
+// CODE HERE
+var me = {
+  firstName: 'Thai',
+  age: '27',
+  state: 'California'
+};
 
-// #2 create a variable called 'faveNum' and assign it to your favorite number
+/**
+ * #2
+ *
+ * Add a new key/value pair to the 'me' object using dot notation.
+ * The new key should be 'faveColor'. Set it to your favorite color as a string.
+ */
 
-const faveNum = 11;
+// CODE HERE
+me.faveColor = 'Green'
 
-// #3 create a variable called 'lovesCode' and set it to true
+/**
+ * #3
+ *
+ * Below is an object, 'message'. Below it, add a 'text' key using bracket notation,
+ * and assign it a string of whatever you would like.
+ */
 
-const lovesCode = true;
+// DON'T TOUCH THE CODE BELOW 
+var message = {
+  date: new Date(),
+  userName: me.firstname
+};
+// DON'T TOUCH THE CODE ABOVE
+// CODE HERE
+message.text['What is the date?']
+/**
+ * #4
+ *
+ * Create an object called 'adjustCount' and create two methods. One called 'upVote' and one called 'downVote'.
+ * upVote() should take in a number, add one to it, and return the number.
+ * downVote() should take in a number, subtract one from it, and return the number.
+ */
 
-// #4 Using the previously created variables, create a new variable called 'me' that uses the myName and faveNum varible to create a sentence like this 'My name is Bryan and my favorite number is 3'
-
-const me = 'My name is ' + myName + 'and my favorite number is ' + faveNum;
-
-// #5 Using the previously created faveNum variable, create a new variable called 'trueFaveNum'. *trueFaveNum* should equal true when comparing faveNum to your favorite number.v // HINT: Use a comparison operator
-
-const trueFaveNum = (faveNum === 11);
-
-// #6 Create a new variable called notHakeem. Using the previously created myName variable, test that your name DOES NOT equal the string 'Hakeem Olajuwon'. If your name does happen to be Hakeem Olajuwon, test against 'Karl Malone'
-
-const notHakeem = 'Hakeem Olajuwon';
-const myName = 'Thai';
-if(myName != notHakeem){
-  console.log(false);
-}else if(myName != 'Karl Malone'){
-  console.log(false);
+// CODE HERE
+var adjustCount = {
+  upVote:function(num1){
+    return num1 + 1; 
+  },
+  downVote:function(num2){
+    return num2 - 1;
+  },
 }
+adjustCount.upVote(2)
+adjustCount.downVote(3)
+/**
+ * #5
+ *
+ * Create an array called 'myFriends' with four of your friends names.
+ */
+
+// CODE HERE
+var myFriends = ['Shaun','Daniel','Doug','Thi'];
+
+/**
+ * #6
+ *
+ * Add a fifth friends name to the end of your 'myFriends' array.
+ */
+
+// CODE HERE
+myFriends[4] = 'John';
+/**
+ * #7
+ *
+ * Create a 'myArrayCopy' variable. It should equal the 'myArray' variable.
+ * Use a built-in JavaScript method to create a copy.
+ */
+
+// DON'T TOUCH THE CODE BELOW
+var myArray = [1, 2, 3, 4];
+// DON'T TOUCH THE CODE ABOVE
+// CODE HERE
+var myArrayCopy = (myArray.slice(0));
+/**
+ * #8
+ *
+ * Below is a array, 'myNumbers'. Create a function called 'evensOnly'
+ * that returns an array of only even numbers.
+ */
+
+//DON'T TOUCH THE CODE BELOW
+var myNumbers = [333, 1, 4, 5, 511, 34, 88, 77, 222];
+//DON'T TOUCH THE CODE ABOVE
+function evensOnly() {
+  // CODE HERE
+  return myNumbers.filter(function(val){return val%2===0})
+}
+console.log(evensOnly());
+/**
+ * #9
+ *
+ * Using .filter(), return only your friends of the array of people below.
+ * Assign it to a variable called 'trueFriends'.
+ */
+
+// CODE HERE
+var peopleIknow = [
+  { name: "Steve", friend: true },
+  { name: "Dan", friend: false },
+  { name: "Bart", friend: true },
+  { name: "Sarah", friend: false },
+  { name: "Michelle", friend: false },
+  { name: "Holly", friend: true }
+];
+var trueFriends = peopleIknow.filter(function(person) {
+  return person.friend === true;
+});
 
 
-// #7 Create an if statement that checks the age variable below. If age is greater than 16, then set canDrive to true otherwise set canDrive to false. The canDrive variable will be set by the unit test so do not adjust it.
-var age = 16;
-var canDrive;
+console.log(trueFriends);
 
-if (age > 16){
-  canDrive = true;
-}else{
-  canDrive = false;
-}console.log(canDrive);
+/**
+ * #10
+ *
+ * Create a function called 'indexFinder' that loops over an array and returns a new array
+ * of the indexes of the array passed into the function. For example, passing the array [243, 123, 4, 12]
+ * into the function would return [0,1,2,3]. Create a new variable called 'indexes' and set it to contain
+ * the indexes of 'randomNumbers'.
+ */
 
+let randomNumbers = [1, 3453, 34, 456, 32, 3, 2, 0];
 
-
-// #8 Create an if statement inside of the responseCreator function that sets the colorResponse variable value based off of a passed in value. The param value passed in will be added in the unit test. If the param value is 'green' set colorResponse variable to 'Green is okay'. If the param value is 'red' set reponse variable to 'I heart red'. Otherwise set the colorResponse variable to 'What is your favorite color?'. Make sure to return the colorResponse variable at the end once it has been properly set.
-
-var colorResponse;
-
-var responseCreator = function(param){
- if(param === 'green'){
-   colorResponse = 'Green is okay.';
- }else if(param === 'red'){
-   colorResponse = 'I heart red.';
- }else {
-   colorResponse = 'What is your favorite color?'
- }
-}return colorResponse;
-
-// #9 Create a function called 'sum' that takes in one parameter and returns the sum of that parameter added it itself.
-
-function sum(number) {
-  return number + number;
-}console.log(sum(4));
-
-// #10 Create a function called 'greeter' that takes in two parameters, name and number. Have 'greeter' return a string that says something like this 'Hi! I am Bryan and I am 28 years old" but with the appropriate values..
-
-function greeter(name, number){
-  return 'Hi! I am ' + name + ' and I am ' + number + ' years old';
-}console.log(greeter('Thai', 27));
+function indexFinder(arr) {
+  var indexes = [];
+  for (i=0; i<arr.length; i++) {
+    indexes.push(i);
+    }
+    return indexes;
+}console.log(indexFinder(randomNumbers));
